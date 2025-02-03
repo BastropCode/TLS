@@ -1,0 +1,20 @@
+
+.title-text{
+
+}
+#dan-img{
+    height: 90vw;
+    width: auto;
+}
+.img-container{
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+.body-text-container{
+    text-align: left;
+}
+.body-text-container p{
+
+}
