@@ -1,6 +1,6 @@
 
-.title-text{
 
+.title-text{
 }
 #dan-img{
     height: 90vw;
@@ -14,7 +14,12 @@
 }
 .body-text-container{
     text-align: left;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
 }
 .body-text-container p{
-
+    width: 40%;
 }
