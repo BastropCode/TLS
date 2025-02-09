@@ -11,11 +11,9 @@ const toggleMenu = () =>{
 
         const currentDoc = document.title;
         const menuItems =  menuDiv.childNodes;
-        console.log(menuItems)
 
         menuItems.forEach(item =>{
-            console.log(item.textContent + " " + currentDoc)
-            if(item.textContent == currentDoc){
+            if(item.textContent === currentDoc){
                 console.log(item)
                 item.classList.add('active');
             }
