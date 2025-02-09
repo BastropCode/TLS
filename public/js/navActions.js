@@ -1,27 +1,10 @@
-const toggleMenu = () =>{
-    if(document.getElementById("menu").style.display === "block"){
-        document.getElementById("menu").style.display = "none";
-        
+    const menuBtn = document.getElementById("menu-button");
+    const menu = document.getElementById("popup-menu");
+    const exitBtn = document.getElementById("exit-btn");
+
+    menuBtn.onclick = function(){
+        menu.style.display = "block";
     }
-    else{
-        const menuDiv = document.getElementById("menu");
-        menuDiv.style.display = "block";
-        document.body.style.overflow = "hidden";
-        
-
-        const currentDoc = document.title;
-        const menuItems =  menuDiv.childNodes;
-
-        menuItems.forEach(item =>{
-            if(item.textContent === currentDoc){
-                console.log(item)
-                item.classList.add('active');
-            }
-
-        });
+    exitBtn.onclick = function(){
+        menu.style.display = "none";
     }
-    
-}
-
-
-    

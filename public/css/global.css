@@ -11,7 +11,7 @@
   --subheader-font-size: ;
   --paragraph-font-size: ;
   --mobile-font-header: 6rem;
-  --mobile-font-subheader: ;
+  --mobile-font-subheader: 1.5rem;
   --mobile-font-paragraph: ;
   --main-container-height: 100vh;
   --main-container-width: 100vw;
@@ -25,13 +25,13 @@ html{
   font-size: 16px;
 }
 body{
-  background-color: var(--color-brand-primary);
+  background-color: var(--color-brand-tertiary);
 }
 .main-container{
   height: var(--main-container-height);
 }
 .nav-bar-container{
-  height: auto;
+  height: 7vh;
   padding-left: 1rem;
   padding-right: 1rem;
   justify-content: space-between;
@@ -62,12 +62,13 @@ body{
   color: var(--color-brand-tertiary);
 }
 .page-content-container{
-  height: calc(100vh - 15vh);
+  height: calc(100vh - 7vh);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  background-color: var(--color-brand-primary);
 }
 
 .page-content-container h1{
@@ -79,5 +80,45 @@ body{
 }
 .page-content-container :nth-child(2){
   font-size: 9rem;
+  color: var(--color-brand-secondary);
+}
+.page-content-container h2{
+  font-family: var(--font-type-b);
+  font-size: var(--mobile-font-subheader);
+  color: #1F1C33;
+  font-weight: 800;
+}
+
+#popup-menu{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-brand-tertiary);
+  z-index: 1;
+}
+#exit-btn{
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-left: 1rem;
+  color: var(--color-brand-secondary);
+}
+#popup-menu ul{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  list-style: none;
+
+}
+#popup-menu a{
+  text-decoration: none;
+  font-family: var(--font-type-b);
+  font-size: 2.5rem;
+  font-weight: 600;
   color: var(--color-brand-secondary);
 }
