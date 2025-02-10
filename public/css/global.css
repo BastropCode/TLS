@@ -34,6 +34,7 @@ body{
   height: 7vh;
   padding-left: 1rem;
   padding-right: 1rem;
+  padding-bottom: 1rem;
   justify-content: space-between;
   align-items: center;
   background-color: var(--color-brand-tertiary);
@@ -90,7 +91,7 @@ body{
 }
 
 #popup-menu{
-  display: flex;
+  display: none;
   flex-direction: column;
   position: fixed;
   top: 0;
@@ -99,11 +100,12 @@ body{
   width: 100%;
   background-color: var(--color-brand-tertiary);
   z-index: 1;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 #exit-btn{
   font-size: 2.5rem;
   font-weight: 900;
-  margin-left: 1rem;
   color: var(--color-brand-secondary);
 }
 #popup-menu ul{
