@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+:root{
+  --color-brand-primary: #D9C27E ;
+  --color-brand-secondary: #68828C;
+  --color-brand-tertiary: #D9D0C7;
+  --font-type-a: "Kalam", sans-serif;
+  --font-type-b: "Noto Sans KR", sans-serif;
+  --header-font-size: ;
+  --subheader-font-size: ;
+  --paragraph-font-size: ;
+  --mobile-font-header: 6rem;
+  --mobile-font-subheader: 1.5rem;
+  --mobile-font-paragraph: 1.2rem;
+  --main-container-height: auto;
+  --main-container-width: 100vw;
+  --margin-left-mobile: 2rem;
+  --content-margin-bottom-mobile: 1rem;
+  --section-margin-bottom-mobile: 2rem;
+  --content-border-color: 1px solid rgba(0,0,0,0.4);
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  font-size: 16px;
+}
+body{
+  background-color: var(--color-brand-primary);
+}
+.main-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--color-brand-primary);
+  height: 100vh;
+}
+
+.landing-container h1{
+  font-size: var(--mobile-font-header);
+  color: var(--color-brand-tertiary);
+  font-family: var(--font-type-a);
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
+  line-height: 12vh;  
+}
+.landing-container :nth-child(2){
+  font-size: 9rem;
+  color: var(--color-brand-secondary);
+}
+.landing-container h2{
+  font-family: var(--font-type-b);
+  font-size: var(--mobile-font-subheader);
+  color: #1F1C33;
+  font-weight: 800;
+  width: 60vw;
+}
+
+.card{
+  background-color: var(--color-brand-tertiary);
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  align-self: center;
+  padding: 2rem;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+}
+.card h1{
+  font-family: var(--font-type-b);
+  margin-bottom: var(--content-margin-bottom-mobile);
+  color: var(--color-brand-secondary);
+}
+.card h2{
+  font-size: 1.0rem;
+  font-family: var(--font-type-b);
+  font-weight: 400;
+}
+.card p{
+  font-family: var(--font-type-b);
+  margin-left: var(--margin-left-mobile);
+  margin-bottom: var(--section-margin-bottom-mobile);
+  font-size: 1.2rem;
+  width: auto;
+  text-align: left;
+}
+.card img{
+  height: 400px;
+  width: 300px;
+  align-self: center;
+  margin-bottom: 1rem;
+  border: var(--content-border-color);
+}
+iframe{
+  width: 300px;
+  height: 300px;
+  border: var(--content-border-color);
+}
