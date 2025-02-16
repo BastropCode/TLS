@@ -41,7 +41,12 @@
                     <h1>
                         News
                     </h1>
-                    
+                    <ul>
+                        <li><button onclick="openNews()">Proud Parents</button></li>
+                        <li><button onclick="openNews()">To Live</button></li>
+                        <li><button onclick="openNews()">Freedom in College</button></li>
+                    </ul>
+
                 </div>
                 <div class="card">
                     <h1>
@@ -55,11 +60,16 @@
                     </h1>
                     
                 </div>
-
-                <!-- This will be hidden until a news article is selected -->
-                <div id="news-card-article">
-
+                <div id="popup-card-article">
+                    <button onclick="closeArticle()">X</button>
+                    <div id="article-container">
+                        <h1>Getting There Safely</h1>
+                        <h4>By: dan</h4>
+                        <p>So you seem to want to leave.</p>
+                    </div>
                 </div>
+                <!-- This will be hidden until a news article is selected -->
+
         </section>
         </div>
         <script src="./index.js"></script>
