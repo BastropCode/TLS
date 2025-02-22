@@ -2,19 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 
 :root {
-  /* Color and font variables */
   --color-brand-primary: #D9C27E;
   --color-brand-secondary: #68828C;
   --color-brand-tertiary: #D9D0C7;
-  --font-type-a: 'Kalam', sans-serif;
-  --font-type-b: 'Noto Sans KR', sans-serif;
+  --font-type-a: 'Kalam';
+  --font-type-b: 'Noto Sans KR';
 
-  /* Mobile font sizes */
   --mobile-font-header: 2rem;
   --mobile-font-subheader: 1.5rem;
   --mobile-font-paragraph: 1.2rem;
 
-  /* Spacing and sizing */
   --margin-horizontal-mobile: 2rem;
   --content-margin-bottom-mobile: 1rem;
   --section-margin-bottom-mobile: 2rem;
@@ -33,16 +30,14 @@ html {
 
 body {
   background-color: var(--color-brand-primary);
-  font-family: var(--font-type-b);
+  font-family: var(--font-type-b), sans-serif;
 }
-
-/* Main container */
+/* --------------------------------- */
 .main-container {
   display: flex;
   flex-direction: column;
 }
-
-/* Landing container (mobile-first) */
+/* --------------------------------- */
 .landing-container {
   display: flex;
   flex-direction: column;
@@ -57,7 +52,7 @@ body {
 .landing-container h1 {
   font-size: 7rem;
   color: var(--color-brand-tertiary);
-  font-family: var(--font-type-a);
+  font-family: var(--font-type-a), sans-serif;
   text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
   line-height: 6rem;
 }
@@ -67,14 +62,13 @@ body {
 }
 
 .landing-container h2 {
-  font-family: var(--font-type-b);
+  font-family: var(--font-type-b), sans-serif;
   font-size: var(--mobile-font-subheader);
   color: #1F1C33;
   font-weight: 800;
   width: 100%;
 }
-
-/* Card component */
+/* --------------------------------- */
 .card {
   background-color: var(--color-brand-tertiary);
   margin: 1rem;
@@ -88,7 +82,7 @@ body {
 }
 
 .card h1 {
-  font-family: var(--font-type-b);
+  font-family: var(--font-type-b), sans-serif;
   color: var(--color-brand-secondary);
   font-size: var(--mobile-font-header);
   margin-bottom: var(--content-margin-bottom-mobile);
@@ -96,12 +90,12 @@ body {
 
 .card h2 {
   font-size: 1rem;
-  font-family: var(--font-type-b);
+  font-family: var(--font-type-b), sans-serif;
   font-weight: 400;
 }
 
 .card p {
-  font-family: var(--font-type-b);
+  font-family: var(--font-type-b), sans-serif;
   margin: var(--section-margin-bottom-mobile) var(--margin-horizontal-mobile);
   font-size: var(--mobile-font-paragraph);
   text-align: left;
@@ -120,12 +114,11 @@ body {
   padding: 0;
 }
 
-/* Card buttons */
 .card button {
   border: none;
   background-color: transparent;
   font-size: 1.5rem;
-  font-family: var(--font-type-b);
+  font-family: var(--font-type-b), sans-serif;
   color: blue;
   cursor: pointer;
 }
@@ -137,17 +130,20 @@ body {
 .card button:focus {
   color: aqua;
 }
+/* --------------------------------- */
 #giving-back-links{
   margin-top: var(--content-margin-bottom-mobile);
 }
 #giving-back-links a{
   font-size: 1.2rem;
 }
+/* --------------------------------- */
 iframe {
   width: 90%;
   height: 25vh;
   border: var(--content-border-color);
 }
+/* --------------------------------- */
 #news-card{
   display: block;
   text-align: center;
@@ -160,78 +156,82 @@ iframe {
 #news-links button{
   font-size: 1.2rem;
 }
+/* --------------------------------- */
 #popup-card-article {
   display: none;
-  min-height: 100vh;
+  height: 100vh;
   width: 100vw;
-  background-color: rgba(0, 0, 0, 1);
+  background-color: white;
   position: fixed;
   top: 0;
   left: 0;
   padding: var(--margin-horizontal-mobile);
 }
-
-#popup-card-article button {
+#popup-head{
+  width: 100%;
+}
+#close-article-button {
   font-size: 2rem;
-  color: white;
+  color: black;
   background-color: transparent;
   font-weight: 900;
-  margin: 1rem;
+  margin-left: -1rem;
+  margin-top: -1rem;
   border: none;
   cursor: pointer;
 }
 
-/* Article container inside popup */
 #article-container {
-  color: aliceblue;
+  color: black;
   width: 100%;
   margin-top: 1rem;
-  font-family: var(--font-type-b);
+  font-family: var(--font-type-b), sans-serif;
+  text-align: left;
 }
-
-#article-container h1 {
+#article-title {
+  font-size: 2.5rem;
+}
+#author{
   font-size: 2rem;
+}
+#date{
+  font-size: var(--mobile-font-subheader);
+  color: rgba(1,1,1,0.6);
+  font-style: italic;
   margin-bottom: var(--content-margin-bottom-mobile);
 }
-
-#article-container h4 {
-  font-size: 1.5rem;
-  margin-bottom: var(--content-margin-bottom-mobile);
+#content{
+  font-size: 1.6rem;
 }
-
-/* Contact form */
+/* --------------------------------- */
 #contact-form {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 90%;
   align-items: center;
-  padding: var(--margin-horizontal-mobile);
+  font-size: 1rem;
 }
 
-#contact-form input,
-#contact-form textarea {
+#name, #email, #comment  {
   width: 100%;
-  max-width: 400px;
   padding: 0.4rem;
   margin-bottom: 0.5rem;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 }
 
-#contact-form button {
+#contact-form button{
   border: 1px solid black;
   color: var(--color-brand-secondary);
   background-color: var(--color-brand-primary);
   padding: 0.5rem 1rem;
-  font-family: var(--font-type-b);
+  font-family: var(--font-type-b), sans-serif;
   font-size: 1rem;
-  cursor: pointer;
   border-radius: 4px;
   width: 100%;
   max-width: 200px;
 }
-
-/* Media query for larger screens */
+/* --------------------------------- */
 @media (min-width: 768px) {
   .landing-container h1 {
     font-size: 4rem;

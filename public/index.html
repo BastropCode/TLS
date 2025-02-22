@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="./global.css">
         <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
     </head>
+    
     <body>
         <div class="main-container">
             <div class="landing-container">
@@ -42,9 +43,9 @@
                         News
                     </h1>
                     <ul id="news-links">
-                        <li><button onclick="openNews()">Proud Parents</button></li>
-                        <li><button onclick="openNews()">To Live</button></li>
-                        <li><button onclick="openNews()">Freedom in College</button></li>
+                        <li><button onclick="openArticleOne()">Proud Parents</button></li>
+                        <li><button onclick="openArticleTwo()">To Live</button></li>
+                        <li><button onclick="openArticleThree()">Freedom in College</button></li>
                     </ul>
 
                 </div>
@@ -54,9 +55,9 @@
                     </h1>
                     <h2>It takes a village. With recovery, the power to heal lies in the masses of addicts, supporters, and family.<br/><br/> If you feel called to, you can give back in several ways:</h2>
                     <ul id="giving-back-links">
-                        <li><a href="">USC fund</a></li>
-                        <li><a href="">Volunteer at LIFE ORG</a></li>
-                        <a><a href=""> Items for SAFEHousing</a></li>
+                        <li><a href="www.google.com">USC fund</a></li>
+                        <li><a href="www.google.com">Volunteer at LIFE ORG</a></li>
+                        <li><a href="www.google.com"> Items for SAFEHousing</a></li>
                     </ul>
                     
                 </div>
@@ -65,22 +66,25 @@
                         Contact Us
                     </h1>
                     <form id="contact-form">
-                        <input type="text" name="name" id="name" placeholder="Name" required>
-                        <input type="email" id="email" name="email" placeholder="Email" required>
-                        <textarea id="comment" name="comment" placeholder="Comment" required></textarea>
+                        <input type="text" id="name" placeholder="Name" required>
+                        <input type="email" id="email" placeholder="Email" required>
+                        <textarea id="comment" placeholder="Comment" required></textarea>
                         <button type="submit">Submit</button>
                     </form>
-                    
-                </div>
-                <div id="popup-card-article">
-                    <button onclick="closeArticle()">X</button>
-                    <div id="article-container">
-                        <h1>Getting There Safely</h1>
-                        <h4>By: dan</h4>
-                        <p>So you seem to want to leave.</p>
-                    </div>
                 </div>
                 <!-- This will be hidden until a news article is selected -->
+
+                <div id="popup-card-article">
+                    <div id="popup-head">
+                        <button onclick="closeArticle()" id="close-article-button">X</button>
+                    </div>
+                    <div id="article-container">
+                        <h1 id="article-title"></h1>
+                        <h2 id="author"></h2>
+                        <h3 id="date"></h3>
+                        <p id="content"></p>
+                    </div>
+                </div>
 
         </section>
         </div>
