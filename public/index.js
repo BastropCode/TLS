@@ -35,7 +35,7 @@ const openArticleOne = () =>{
     content.innerText += newsArticle[0].content;
 
     popup.style.display = "block"; 
-    document.body.style.overflowY = "hidden";
+    document.body.style.position = "fixed";
 }
 const openArticleTwo = () =>{
     title.innerText += newsArticle[1].title;
@@ -44,7 +44,7 @@ const openArticleTwo = () =>{
     content.innerText += newsArticle[1].content;
     
     popup.style.display = "block";
-    document.body.style.overflowY = "hidden"; 
+    document.body.style.position = "fixed"; 
 }
 const openArticleThree = () =>{
     
@@ -54,14 +54,14 @@ const openArticleThree = () =>{
     content.innerText += newsArticle[2].content;
 
     popup.style.display = "block"; 
-    document.body.style.overflowY = "hidden";
+    document.body.style.position = "fixed";
 }
 const closeArticle = () =>{
-    title.innerText = "" 
-    date.innerText=""
-    author.innerText = "" 
+    title.innerText = ""; 
+    date.innerText="";
+    author.innerText = "";
     content.innerText = "";
     
     popup.style.display = "none";
-    document.body.style.overflowY = "scroll";
+    document.body.style.position = "static";
 }
