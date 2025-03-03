@@ -267,6 +267,7 @@ iframe {
   
   .card h2 {
     font-size: var(--desktop-font-subheader);
+
   }
   
   .card p {
@@ -299,9 +300,10 @@ iframe {
   }
   #giving-back-links a{
     font-size: var(--desktop-font-paragraph);
-
-    font-size: 3rem;
     text-decoration: none;
+  }
+  #giving-back-links a:hover{
+    color: brown;
   }
   /* --------------------------------- */
   iframe {
@@ -312,11 +314,18 @@ iframe {
 
   }
   #news-links{
-    font-size: var();
-
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
   #news-links button{
-    font-size: var(--desktop-font-subheader);
+    font-size: 2rem;
+    color: purple;
+    }
+    #news-links button:hover{
+      color: brown;
+      transform: scale(1.1);
     }
   /* --------------------------------- */
   #popup-card-article {
