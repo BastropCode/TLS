@@ -8,6 +8,10 @@
   --font-type-a: 'Kalam';
   --font-type-b: 'Noto Sans KR';
 
+  --desktop-font-heading: 4rem;
+  --desktop-font-subheader: 2.5rem;
+  --desktop-font-paragraph: 2rem;
+
   --mobile-font-header: 2rem;
   --mobile-font-subheader: 1.5rem;
   --mobile-font-paragraph: 1.2rem;
@@ -67,6 +71,13 @@ body {
   color: #1F1C33;
   font-weight: 800;
   width: 100%;
+}
+
+.content-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 /* --------------------------------- */
 .card {
@@ -233,14 +244,112 @@ iframe {
 }
 /* --------------------------------- */
 @media (min-width: 768px) {
+  
   .landing-container h1 {
-    font-size: 4rem;
+    font-size: 15rem;
+    line-height: 13rem;
   }
+  .landing-container h1:nth-child(2){
+    font-size: 20rem;
+  }
+  
   .landing-container h2 {
-    font-size: 2rem;
-    width: 60%;
+    font-size: 3rem;
   }
+  /* --------------------------------- */
   .card {
-    width: 60%;
+    width: 60vw;
   }
+  
+  .card h1 {
+    font-size: var(--desktop-font-heading);
+  }
+  
+  .card h2 {
+    font-size: var(--desktop-font-subheader);
+  }
+  
+  .card p {
+    font-size: var(--desktop-font-paragraph);
+  }
+  
+  .card img {
+    height: 70vh;
+  }
+  
+  .card ul {
+
+  }
+  
+  .card button {
+
+  }
+  
+  .card button:active {
+  }
+  
+  .card button:focus {
+  }
+  /* --------------------------------- */
+  #giving-back-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  #giving-back-links a{
+    font-size: var(--desktop-font-paragraph);
+
+    font-size: 3rem;
+    text-decoration: none;
+  }
+  /* --------------------------------- */
+  iframe {
+    height: 60vh;
+  }
+  /* --------------------------------- */
+  #news-card{
+
+  }
+  #news-links{
+    font-size: var();
+
+  }
+  #news-links button{
+    font-size: var(--desktop-font-subheader);
+    }
+  /* --------------------------------- */
+  #popup-card-article {
+
+  }
+  #popup-head{
+  }
+  #close-article-button {
+
+  }
+  
+  #article-container {
+  }
+  #article-title {
+  }
+  #author{
+  }
+  #date{
+  }
+  #content{
+  }
+  /* --------------------------------- */
+  #contact-form {
+  }
+  
+  #name, #email, #comment  {
+    height: auto;
+    width: 30vw;
+    font-size: 1rem;
+  }
+  
+  #contact-form button{
+
+  }
+
 }
