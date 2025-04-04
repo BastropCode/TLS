@@ -184,7 +184,6 @@ h1, h2, h3 {
 
 .contact-form {
     max-width: 600px;
-    margin: 0 auto;
 }
 
 .form-group {
@@ -298,6 +297,7 @@ footer {
     color: white;
     border-bottom-style: solid;
 }
+
 
 @media (max-width: 768px) {
     nav ul {
