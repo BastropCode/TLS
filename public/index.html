@@ -3,163 +3,790 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Live Sober - Austin's Recovery Resources</title>
-    <link rel="stylesheet" href="style.css">
+    <title>ToLiveSober | Embracing Clarity in the Heart of Texas</title>
+    <style>
+        /* CSS Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #5C8D89;
+            --secondary: #C97C5D;
+            --accent-1: #A3B18A;
+            --accent-2: #FDFCDC;
+            --text: #333333;
+            --light-text: #666666;
+            --background: #FFFFFF;
+            --light-background: #F5F5F5;
+        }
+        
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background-color: var(--background);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--secondary);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        
+        .button:hover {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .button.secondary {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .button.secondary:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Header Styles */
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--text);
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background-color: var(--light-background);
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--light-text);
+        }
+        
+        /* Featured Posts */
+        .featured-posts {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--primary);
+        }
+        
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .post-card {
+            background-color: var(--light-background);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .post-image {
+            height: 200px;
+            background-color: var(--accent-1);
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .post-content {
+            padding: 20px;
+        }
+        
+        .post-category {
+            display: inline-block;
+            background-color: var(--accent-2);
+            color: var(--secondary);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        
+        .post-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .post-excerpt {
+            color: var(--light-text);
+            margin-bottom: 15px;
+        }
+        
+        .post-meta {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: var(--light-text);
+        }
+        
+        .post-meta img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        /* About Section */
+        .about-section {
+            padding: 80px 0;
+            background-color: var(--light-background);
+        }
+        
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-image {
+            flex: 1;
+            height: 400px;
+            background-color: var(--accent-1);
+            border-radius: 8px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .about-content {
+            flex: 1;
+        }
+        
+        /* Newsletter Section */
+        .newsletter {
+            padding: 80px 0;
+            text-align: center;
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .newsletter h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-size: 16px;
+        }
+        
+        .newsletter-form button {
+            padding: 15px 30px;
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: #b86e50;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 50px 0 20px;
+            background-color: var(--text);
+            color: white;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            color: #ccc;
+        }
+        
+        /* Blog Post Page */
+        .blog-header {
+            padding: 60px 0;
+            background-color: var(--light-background);
+            text-align: center;
+        }
+        
+        .blog-title {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+            color: var(--light-text);
+        }
+        
+        .blog-meta img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .blog-meta span {
+            margin: 0 10px;
+        }
+        
+        .blog-content {
+            padding: 60px 0;
+        }
+        
+        .blog-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .blog-image {
+            margin-bottom: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .blog-image img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .blog-text h2 {
+            font-size: 28px;
+            margin: 40px 0 20px;
+        }
+        
+        .blog-text p {
+            margin-bottom: 20px;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        
+        .blog-text blockquote {
+            border-left: 4px solid var(--primary);
+            padding-left: 20px;
+            margin: 30px 0;
+            font-style: italic;
+            color: var(--light-text);
+        }
+        
+        /* Share and Comments */
+        .blog-share {
+            margin: 40px 0;
+            padding: 20px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .blog-share h3 {
+            margin-bottom: 15px;
+        }
+        
+        .share-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .share-button {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 4px;
+            color: white;
+            font-size: 14px;
+        }
+        
+        .share-button.facebook {
+            background-color: #3b5998;
+        }
+        
+        .share-button.twitter {
+            background-color: #1da1f2;
+        }
+        
+        .share-button.pinterest {
+            background-color: #bd081c;
+        }
+        
+        /* Related Posts */
+        .related-posts {
+            padding: 60px 0;
+            background-color: var(--light-background);
+        }
+        
+        /* About Page */
+        .team-section {
+            padding: 80px 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .team-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background-color: var(--accent-1);
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .team-name {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        
+        .team-role {
+            color: var(--light-text);
+            margin-bottom: 15px;
+        }
+        
+        /* Contact Page */
+        .contact-section {
+            padding: 80px 0;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 20px;
+        }
+        
+        .contact-details {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .contact-details li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .contact-form textarea {
+            height: 200px;
+            resize: vertical;
+        }
+        
+        /* Resources Page */
+        .resources-section {
+            padding: 80px 0;
+        }
+        
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .resource-card {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .resource-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--accent-2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-size: 24px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .about-container {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form input {
+                border-radius: 4px;
+                margin-bottom: 10px;
+            }
+            
+            .newsletter-form button {
+                border-radius: 4px;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <div class="helpline">
-        Need immediate help? Call the 24/7 Substance Abuse Helpline: <a href="tel:1-800-662-4357">1-800-662-HELP (4357)</a>
-    </div>
-    
+    <!-- Header -->
     <header>
-        <div style="position: relative; z-index: 2;">
-            <h1 style="font-family: 'Impact', sans-serif; font-size: 3.5rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.5rem; text-shadow: 3px 3px 0px rgba(0,0,0,0.3);">TO LIVE SOBER</h1>
-            <div style="width: 80%; max-width: 500px; height: 3px; background: #fff; margin: 0.5rem auto 1rem;"></div>
-            <p style="font-family: 'Courier New', monospace; font-weight: bold; font-size: 1.3rem; letter-spacing: 1px; text-transform: uppercase;">Austin's Recovery Resources</p>
-            <div style="max-width: 280px; margin: 1rem auto 0; border: 2px solid white; border-radius: 50px; padding: 0.5rem 1rem; font-size: 0.9rem; font-style: italic;">Since 2025</div>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">To<span>Live</span>Sober</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="mobile-menu">☰</div>
+            </nav>
         </div>
     </header>
-    
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#resources">Resources</a></li>
-            <li><a href="#news">Recovery News</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <!-- TODO: add about section -->
-        </ul>
-    </nav>
-    
-    <main>
-        <section id="home">
-            <div class="hero">
-                <h2>Your Journey to Recovery Starts Here</h2>
-                <p>To Live Sober provides access to Austin's best addiction recovery resources, support groups, and treatment options. You are not alone, and help is available.</p>
-            </div>
-        </section>
-        
-        <section id="resources">
-            <h2>Recovery Resources</h2>
-            <div class="resources">
-                <div class="resource-card">
-                    <h3>Treatment Centers</h3>
-                    <p>Find comprehensive information about inpatient and outpatient treatment centers in Austin, including services offered, insurance accepted, and specialties.</p>
-                    <a href="#treatment-centers">View Treatment Centers →</a>
-                </div>
-                
-                <div class="resource-card">
-                    <h3>Support Groups</h3>
-                    <p>Connect with AA, NA, SMART Recovery, and other peer support meetings happening throughout Austin. Filter by location, time, and meeting type.</p>
-                    <a href="#support-groups">Find a Meeting →</a>
-                </div>
-                
-                <div class="resource-card">
-                    <h3>Sober Living Homes</h3>
-                    <p>Explore transitional housing options that provide structure and support for people in early recovery, with details on costs, amenities, and house rules.</p>
-                    <a href="#sober-living">View Housing Options →</a>
-                </div>
-                
-                <div class="resource-card">
-                    <h3>Mental Health Services</h3>
-                    <p>Access resources for dual diagnosis care, therapists specializing in addiction, and mental health crisis services in the Austin area.</p>
-                    <a href="#mental-health">Mental Health Resources →</a>
-                </div>
-                
-                <div class="resource-card">
-                    <h3>Family Support</h3>
-                    <p>Resources for loved ones affected by addiction, including Al-Anon meetings, family therapy options, and educational materials.</p>
-                    <a href="#family-support">Family Resources →</a>
-                </div>
-                
-                <div class="resource-card">
-                    <h3>Sober Activities</h3>
-                    <p>Discover substance-free events, recreational activities, and community groups that support a healthy lifestyle in recovery.</p>
-                    <a href="#sober-activities">Find Activities →</a>
-                </div>
-            </div>
-        </section>
-        
-        <section id="news">
-            <h2>Recovery in the News</h2>
-            <div class="news-items">
-                <div class="news-card">
-                    <img src="/api/placeholder/400/320" alt="Austin recovery community">
-                    <div class="date">April 1, 2025</div>
-                    <h3>New Recovery Community Center Opens in East Austin</h3>
-                    <p>The center will provide peer support services, recovery coaching, and community events for people at all stages of recovery.</p>
-                    <a href="#news-1">Read More →</a>
-                </div>
-                
-                <div class="news-card">
-                    <img src="/api/placeholder/400/320" alt="Research findings">
-                    <div class="date">March 22, 2025</div>
-                    <h3>Study Shows Benefits of Integrated Treatment Approaches</h3>
-                    <p>New research highlights the effectiveness of combining behavioral therapy, medication, and peer support in addiction treatment.</p>
-                    <a href="#news-2">Read More →</a>
-                </div>
-                
-                <div class="news-card">
-                    <img src="/api/placeholder/400/320" alt="City council meeting">
-                    <div class="date">March 15, 2025</div>
-                    <h3>Austin City Council Approves Funding for Recovery Housing</h3>
-                    <p>The initiative aims to expand affordable housing options for individuals in early recovery from substance use disorders.</p>
-                    <a href="#news-3">Read More →</a>
-                </div>
-            </div>
-        </section>
-        
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Have questions or need help finding resources? Fill out the form below, and we'll get back to you within 24 hours.</p>
-            
-            <div class="contact-form">
-                <form action="https://formspree.io/f/xkgjqqrl" method="POST">
-                    
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Phone (optional)</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="inquiry-type">Type of Inquiry</label>
-                        <select id="inquiry-type" name="inquiry-type">
-                            <option value="resource-information">Resource Information</option>
-                            <option value="treatment-referral">Treatment Referral</option>
-                            <option value="volunteer">Volunteer Opportunities</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    
-                    <input type="text" name="_gotcha" style="display:none">
-                    
-                    <button type="submit">Send Message</button>
-                </form>
-            </div>
-        </section>
-    </main>
-    
-    <footer>
-        <p>© 2025 To Live Sober - Austin's Recovery Resources</p>
-        <p>Disclaimer: This website does not provide medical advice. The resources listed are for informational purposes only.</p>
-        <p>If you are experiencing a medical emergency, please call 911 or go to the nearest emergency room.</p>
-    </footer>
-    <script src="./index.js">
 
-    </script>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Embracing Clarity in the Heart of Texas</h1>
+            <p>Discover the journey of sobriety through authentic stories, local resources, and a supportive community in Austin and beyond.</p>
+            <a href="blog.html" class="button">Explore Our Stories</a>
+        </div>
+    </section>
+
+    <!-- Featured Posts -->
+    <section class="featured-posts">
+        <div class="container">
+            <h2 class="section-title">Featured Stories</h2>
+            <div class="posts-grid">
+                <!-- Post 1 -->
+                <div class="post-card">
+                    <div class="post-image" style="background-image: url('/api/placeholder/600/400');"></div>
+                    <div class="post-content">
+                        <span class="post-category">Personal Journey</span>
+                        <h3 class="post-title">Finding Calm: My First Year Alcohol-Free in Austin</h3>
+                        <p class="post-excerpt">Navigating social scenes, discovering new hobbies, and reconnecting with myself during my first sober year in the Live Music Capital.</p>
+                        <div class="post-meta">
+                            <img src="/api/placeholder/60/60" alt="Author">
+                            <span>By Jessica T. • April 10, 2025</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Post 2 -->
+                <div class="post-card">
+                    <div class="post-image" style="background-image: url('/api/placeholder/600/400');"></div>
+                    <div class="post-content">
+                        <span class="post-category">Local Guide</span>
+                        <h3 class="post-title">5 Alcohol-Free Venues in Austin for Live Music Lovers</h3>
+                        <p class="post-excerpt">Discover the best spots around town to enjoy Austin's legendary music scene without the pressure to drink.</p>
+                        <div class="post-meta">
+                            <img src="/api/placeholder/60/60" alt="Author">
+                            <span>By Marcus R. • April 3, 2025</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Post 3 -->
+                <div class="post-card">
+                    <div class="post-image" style="background-image: url('/api/placeholder/600/400');"></div>
+                    <div class="post-content">
+                        <span class="post-category">Wellness</span>
+                        <h3 class="post-title">Morning Rituals: Building a Mindful Start to Your Day</h3>
+                        <p class="post-excerpt">How establishing consistent morning practices has supported my sobriety journey and improved overall wellbeing.</p>
+                        <div class="post-meta">
+                            <img src="/api/placeholder/60/60" alt="Author">
+                            <span>By Aiden K. • March 28, 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-container">
+                <div class="about-image" style="background-image: url('/api/placeholder/600/800');"></div>
+                <div class="about-content">
+                    <h2>Our Story</h2>
+                    <p>ToLiveSober was born from a simple idea: sobriety doesn't mean the end of a vibrant life—it's often the beginning of one. Based in Austin, Texas, we're passionate about showcasing the rich, fulfilling experiences available to those embracing an alcohol-free lifestyle.</p>
+                    <p>Our community celebrates the journey of recovery while providing practical resources, authentic stories, and local connections for anyone navigating sobriety in the Lone Star State and beyond.</p>
+                    <p>Whether you're newly sober, sober-curious, or supporting someone on their journey, you've found a welcoming space that honors every step of the path to clarity.</p>
+                    <a href="about.html" class="button secondary">Learn More About Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Stay Connected</h2>
+            <p>Subscribe to our newsletter for the latest stories, resources, and upcoming sober events in Austin.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>ToLiveSober</h3>
+                    <p>Embracing clarity and authentic living in Austin, Texas and beyond.</p>
+                    <div class="social-links">
+                        <a href="#">F</a>
+                        <a href="#">I</a>
+                        <a href="#">T</a>
+                        <a href="#">P</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Explore</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Personal Journeys</a></li>
+                        <li><a href="#">Local Resources</a></li>
+                        <li><a href="#">Wellness</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Alcohol-Free Guides</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li>Austin, TX</li>
+                        <li>hello@tolivesober.com</li>
+                        <li><a href="contact.html">Contact Form</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 ToLiveSober. All rights reserved.
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
