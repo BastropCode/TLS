@@ -3,81 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tolivesober | Embracing Clarity in the Heart of Texas</title>
-    <link rel="stylesheet" href="style.css">
+    <title>tolivesober by dancreativeco | Web Dev</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a1a2e; /* Rich dark indigo/purple */
+            color: #e0e0e0; /* Soft off-white for text */
+        }
+        .lush-gradient-text {
+            background: linear-gradient(to right, #f0c3f0, #b0e0e6); /* Soft pink to soft cyan */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .lush-gradient-bg { /* For hero, projects section */
+            background: linear-gradient(135deg, #1a1a2e 0%, #2a2a4e 50%, #16213e 100%); /* Dark gradient */
+        }
+        .section-alt-bg { /* For about, skills section */
+            background-color: #16213e; /* Solid dark blue/purple */
+        }
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.05); /* Subtle glass for dark theme */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem; /* 12px, equivalent to rounded-xl */
+        }
+        .section-title {
+            font-size: 2.5rem; /* 40px */
+            font-weight: 800;
+            margin-bottom: 1.5rem; /* 24px */
+            text-align: center;
+        }
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+        nav a {
+            color: #c0b0d0; /* Light pastel lavender for nav links */
+        }
+        nav a:hover {
+            color: #f0c3f0; /* Soft pink accent for hover */
+        }
+        .skill-tag {
+            transition: all 0.3s ease;
+            color: #d8c4e8; /* Soft lavender text for tags */
+            font-weight: 500;
+        }
+        .skill-tag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 2px 8px rgba(240, 195, 240, 0.2); /* Softer pink shadow */
+        }
+        /* Custom scrollbar for dark theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a1a2e; /* Dark background for track */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #b0e0e6; /* Soft cyan for thumb */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f0c3f0; /* Soft pink for thumb hover */
+        }
+        .button-pastel-gradient {
+             background: linear-gradient(to right, #ee9ca7, #ffdde1); /* Pastel pink gradient */
+        }
+        .button-pastel-gradient:hover {
+             background: linear-gradient(to right, #f0a0aa, #ffe1e5); /* Slightly darker pastel pink */
+        }
+    </style>
 </head>
+<body class="antialiased leading-relaxed">
 
-<body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav class="navbar">
-                <a href="index.html" class="logo">to<span>live</span>sober</a>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="resources.html">Resources</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                <div class="mobile-menu">☰</div>
-            </nav>
+    <nav class="fixed top-0 left-0 right-0 z-50 py-4 glassmorphism shadow-lg">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold lush-gradient-text">tolivesober</a>
+            <div class="space-x-6 text-lg">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="min-h-screen flex items-center justify-center lush-gradient-bg pt-20 md:pt-16">
+        <div class="text-center p-6 md:p-12">
+            <h1 class="text-6xl md:text-8xl font-extrabold mb-2">
+                <span class="lush-gradient-text">tolivesober</span>
+            </h1>
+            <p class="text-2xl md:text-3xl font-light mb-6 text-gray-400">by dancreativeco</p>
+            <p class="text-xl md:text-2xl font-normal mb-8 text-gray-300">Crafting Digital Experiences with Purpose & Precision.</p>
+            <a href="#projects" class="button-pastel-gradient text-gray-800 font-semibold py-3 px-8 rounded-lg text-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105">
+                Explore My Work
+            </a>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <!-- TODO:Update hero to include a video playing. Make more minimalist -->
-        <div class="container">
-            <h1>Embracing Clarity in the Heart of Texas</h1>
-            <p>Discover the journey of sobriety through authentic stories, local resources, and a supportive community in Austin and beyond.</p>
-            <a href="blog.html" class="button">Explore Our Stories</a>
+    <section id="about" class="py-20 md:py-32 section-alt-bg">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title"><span class="lush-gradient-text">About</span> <span class="text-white">Me</span></h2>
+            <div class="max-w-3xl mx-auto text-center text-lg md:text-xl text-gray-300 space-y-6">
+                <p>
+                    "tolivesober" is more than just a name; it's the philosophy guiding my development process at <span class="font-semibold text-pink-300">dancreativeco</span>.
+                    It represents a commitment to clarity, intentionality, and creating digital solutions that are not only functional but also meaningful and beautifully executed.
+                </p>
+                <p>
+                    I believe in a focused approach, stripping away the unnecessary to deliver clean, robust, and user-centric applications.
+                    This portfolio showcases projects built with this ethos – a blend of creative problem-solving and meticulous craftsmanship.
+                </p>
+                <p>
+                    As Dan, the developer behind dancreativeco, I pour passion into every line of code, aiming for elegance in structure and a seamless user experience.
+                </p>
+            </div>
         </div>
     </section>
 
-    <!-- Featured Posts -->
-    <section class="featured-posts">
-        <div class="container">
-            <h2 class="section-title">Featured Stories</h2>
-            <div class="posts-grid">
-                <!-- Post 1 -->
-                <div class="post-card">
-                    <div class="post-image" style="background-image: url('/api/placeholder/600/400');"></div>
-                    <div class="post-content">
-                        <span class="post-category">Personal Journey</span>
-                        <h3 class="post-title">Finding Calm: My First Year Alcohol-Free in Austin</h3>
-                        <p class="post-excerpt">Navigating social scenes, discovering new hobbies, and reconnecting with myself during my first sober year in the Live Music Capital.</p>
-                        <div class="post-meta">
-                            <img src="/api/placeholder/60/60" alt="Author">
-                            <span>By Jessica T. • April 10, 2025</span>
+    <section id="projects" class="py-20 md:py-32 lush-gradient-bg">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title"><span class="text-white">Featured</span> <span class="lush-gradient-text">Projects</span></h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="project-card glassmorphism overflow-hidden shadow-2xl transform transition duration-500 hover:scale-105 group">
+                    <div class="overflow-hidden h-64">
+                        <img src="https://placehold.co/600x400/2a2a4e/e0e0e0?text=Project+Alpha" alt="Project Alpha" class="project-image w-full h-full object-cover transition-transform duration-500 ease-in-out">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-pink-300">Project Alpha</h3>
+                        <p class="text-gray-400 mb-4 text-sm">A cutting-edge web application designed to streamline user workflows and boost productivity through an intuitive interface.</p>
+                        <div class="mb-4">
+                            <span class="inline-block bg-pink-800 bg-opacity-50 text-pink-200 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">React</span>
+                            <span class="inline-block bg-cyan-800 bg-opacity-50 text-cyan-200 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Node.js</span>
+                            <span class="inline-block bg-teal-800 bg-opacity-50 text-teal-200 text-xs font-semibold px-2.5 py-0.5 rounded-full">MongoDB</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-pink-300 hover:text-pink-200 font-semibold transition duration-300">Live Demo</a>
+                            <a href="#" class="text-cyan-300 hover:text-cyan-200 font-semibold transition duration-300">View Code</a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Post 2 -->
-                <div class="post-card">
-                    <div class="post-image" style="background-image: url('/api/placeholder/600/400');"></div>
-                    <div class="post-content">
-                        <span class="post-category">Local Guide</span>
-                        <h3 class="post-title">5 Alcohol-Free Venues in Austin for Live Music Lovers</h3>
-                        <p class="post-excerpt">Discover the best spots around town to enjoy Austin's legendary music scene without the pressure to drink.</p>
-                        <div class="post-meta">
-                            <img src="/api/placeholder/60/60" alt="Author">
-                            <span>By Marcus R. • April 3, 2025</span>
+
+                <div class="project-card glassmorphism overflow-hidden shadow-2xl transform transition duration-500 hover:scale-105 group">
+                     <div class="overflow-hidden h-64">
+                        <img src="https://placehold.co/600x400/1a1a2e/e0e0e0?text=Project+Beta" alt="Project Beta" class="project-image w-full h-full object-cover transition-transform duration-500 ease-in-out">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-pink-300">Project Beta</h3>
+                        <p class="text-gray-400 mb-4 text-sm">An e-commerce platform with a focus on user experience and seamless integration of payment gateways.</p>
+                         <div class="mb-4">
+                            <span class="inline-block bg-pink-800 bg-opacity-50 text-pink-200 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Vue.js</span>
+                            <span class="inline-block bg-teal-800 bg-opacity-50 text-teal-200 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Firebase</span>
+                            <span class="inline-block bg-cyan-800 bg-opacity-50 text-cyan-200 text-xs font-semibold px-2.5 py-0.5 rounded-full">Stripe</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-pink-300 hover:text-pink-200 font-semibold transition duration-300">Live Demo</a>
+                            <a href="#" class="text-cyan-300 hover:text-cyan-200 font-semibold transition duration-300">View Code</a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Post 3 -->
-                <div class="post-card">
-                    <div class="post-image" style="background-image: url('/api/placeholder/600/400');"></div>
-                    <div class="post-content">
-                        <span class="post-category">Wellness</span>
-                        <h3 class="post-title">Morning Rituals: Building a Mindful Start to Your Day</h3>
-                        <p class="post-excerpt">How establishing consistent morning practices has supported my sobriety journey and improved overall wellbeing.</p>
-                        <div class="post-meta">
-                            <img src="/api/placeholder/60/60" alt="Author">
-                            <span>By Aden K. • March 28, 2025</span>
+
+                <div class="project-card glassmorphism overflow-hidden shadow-2xl transform transition duration-500 hover:scale-105 group">
+                    <div class="overflow-hidden h-64">
+                        <img src="https://placehold.co/600x400/2a2a4e/e0e0e0?text=Project+Gamma" alt="Project Gamma" class="project-image w-full h-full object-cover transition-transform duration-500 ease-in-out">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-pink-300">Project Gamma</h3>
+                        <p class="text-gray-400 mb-4 text-sm">A data visualization dashboard helping businesses make informed decisions with interactive charts and real-time data.</p>
+                        <div class="mb-4">
+                            <span class="inline-block bg-cyan-800 bg-opacity-50 text-cyan-200 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">D3.js</span>
+                            <span class="inline-block bg-teal-800 bg-opacity-50 text-teal-200 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Python (Flask)</span>
+                            <span class="inline-block bg-purple-800 bg-opacity-50 text-purple-200 text-xs font-semibold px-2.5 py-0.5 rounded-full">PostgreSQL</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-pink-300 hover:text-pink-200 font-semibold transition duration-300">Live Demo</a>
+                            <a href="#" class="text-cyan-300 hover:text-cyan-200 font-semibold transition duration-300">View Code</a>
                         </div>
                     </div>
                 </div>
@@ -85,81 +186,136 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about-section">
-        <div class="container">
-            <div class="about-container">
-                <div class="about-image" style="background-image: url('/api/placeholder/600/800');"></div>
-                <div class="about-content">
-                    <h2>The Story So Far</h2>
-                    <p>ToLiveSober was born from a simple idea: sobriety doesn't mean the end of a vibrant life—it's often the beginning of one. Based in Austin, Texas, we're passionate about showcasing the rich, fulfilling experiences available to those embracing an alcohol-free lifestyle.</p>
-                    <p>Our community celebrates the journey of recovery while providing practical resources, authentic stories, and local connections for anyone navigating sobriety in the Lone Star State and beyond.</p>
-                    <p>Whether you're newly sober, sober-curious, or supporting someone on their journey, you've found a welcoming space that honors every step of the path to clarity.</p>
-                    <a href="about.html" class="button secondary">Learn More About Us</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter -->
-    <section class="newsletter">
-        <div class="container">
-            <h2>Stay Connected</h2>
-            <p>Subscribe to our newsletter for the latest stories, resources, and upcoming sober events in Austin.</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Your email address" required>
-                <button type="submit">Subscribe</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-column">
-                    <h3>ToLiveSober</h3>
-                    <p>Embracing clarity and authentic living in Austin, Texas and beyond.</p>
-                    <div class="social-links">
-                        <a href="#">F</a>
-                        <a href="#">I</a>
-                        <a href="#">T</a>
-                        <a href="#">P</a>
+    <section id="skills" class="py-20 md:py-32 section-alt-bg">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title"><span class="lush-gradient-text">My</span> <span class="text-white">Skillset</span></h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold text-pink-300 mb-6 text-center">Frontend Development</h3>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">HTML5</span>
+                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">CSS3 & Tailwind</span>
+                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">JavaScript (ES6+)</span>
+                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">React</span>
+                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">Vue.js</span>
+                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">Next.js</span>
                     </div>
                 </div>
-                <div class="footer-column">
-                    <h3>Explore</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="resources.html">Resources</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold text-pink-300 mb-6 text-center">Backend Development</h3>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">Node.js & Express</span>
+                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">Python (Flask/Django)</span>
+                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">REST APIs & GraphQL</span>
+                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">MongoDB</span>
+                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">PostgreSQL</span>
+                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">Firebase</span>
+                    </div>
                 </div>
-                <div class="footer-column">
-                    <h3>Categories</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Personal Journeys</a></li>
-                        <li><a href="#">Local Resources</a></li>
-                        <li><a href="#">Wellness</a></li>
-                        <li><a href="#">Community</a></li>
-                        <li><a href="#">Alcohol-Free Guides</a></li>
-                    </ul>
+                <div>
+                    <h3 class="text-2xl font-semibold text-pink-300 mb-6 text-center">Tools & Other</h3>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">Git & GitHub</span>
+                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">Docker</span>
+                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">Webpack</span>
+                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">Figma</span>
+                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">Agile Methodologies</span>
+                    </div>
                 </div>
-                <div class="footer-column">
-                    <h3>Contact</h3>
-                    <ul class="footer-links">
-                        <li>Austin, TX</li>
-                        <li>dan@dancreative.co</li>
-                        <li><a href="contact.html">Contact Form</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                &copy; 2025 ToLiveSober. All rights reserved.
             </div>
         </div>
+    </section>
+
+    <section id="contact" class="py-20 md:py-32 lush-gradient-bg">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title"><span class="text-white">Get In</span> <span class="lush-gradient-text">Touch</span></h2>
+            <div class="max-w-xl mx-auto text-center">
+                <p class="text-lg text-gray-300 mb-8">
+                    Interested in collaborating or have a project in mind? I'd love to hear from you.
+                    Let's create something exceptional together.
+                </p>
+                <a href="mailto:hello@tolivesober.com" class="button-pastel-gradient text-gray-800 font-semibold py-4 px-10 rounded-lg text-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 inline-block">
+                    hello@dancreativeco.com
+                </a>
+                <div class="mt-12 flex justify-center space-x-6">
+                    <a href="https://github.com/dancreativeco" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-pink-300 transition duration-300">
+                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                    </a>
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-pink-300 transition duration-300">
+                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 text-center bg-[#111827]"> <p class="text-gray-500">
+            &copy; <span id="currentYear"></span> dancreativeco. All rights reserved.
+        </p>
+        <p class="text-gray-600 text-sm">Portfolio concept: <span class="font-semibold lush-gradient-text">tolivesober</span></p>
     </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                // Adjust for fixed nav height (approx 60px, check your nav's actual height)
+                const navHeight = document.querySelector('nav')?.offsetHeight || 60; // Nav height is dynamic
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = elementPosition - navHeight;
+    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Optional: Simple scroll animations for sections 
+        // (You'd need to define the 'fade-in-up' CSS class as previously discussed if you enable this)
+        /*
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0; 
+        }
+        const sections = document.querySelectorAll('section'); // Ensure this is not inside another script tag
+        const options = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                    // observer.unobserve(entry.target); 
+                }
+            });
+        }, options);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        */
+    </script>
+
 </body>
 </html>
