@@ -3,319 +3,271 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tolivesober by dancreativeco | Web Dev</title>
+    <title>ToLiveSober - A Recovery Journey</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #1a1a2e; /* Rich dark indigo/purple */
-            color: #e0e0e0; /* Soft off-white for text */
+            background-color: #F5F5F4; /* stone-100 (Beige/Off-white) */
+            color: #262626; /* neutral-800 (Dark Gray/Off-black) */
         }
-        .lush-gradient-text {
-            background: linear-gradient(to right, #f0c3f0, #b0e0e6); /* Soft pink to soft cyan */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .hero-bg {
+            background-color: #262626; /* neutral-800 (Dark Gray/Off-black) */
         }
-        .lush-gradient-bg { /* For hero, projects section */
-            background: linear-gradient(135deg, #1a1a2e 0%, #2a2a4e 50%, #16213e 100%); /* Dark gradient */
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.04); /* Softer shadow for neutral theme */
         }
-        .section-alt-bg { /* For about, skills section */
-            background-color: #16213e; /* Solid dark blue/purple */
+        .nav-link {
+            @apply px-3 py-2 rounded-md text-sm font-medium text-neutral-700 hover:bg-stone-200 hover:text-neutral-900 transition-colors;
         }
-        .glassmorphism {
-            background: rgba(255, 255, 255, 0.05); /* Subtle glass for dark theme */
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 0.75rem; /* 12px, equivalent to rounded-xl */
+        .nav-link-active {
+            @apply bg-neutral-700 text-white hover:bg-neutral-800;
         }
-        .section-title {
-            font-size: 2.5rem; /* 40px */
-            font-weight: 800;
-            margin-bottom: 1.5rem; /* 24px */
-            text-align: center;
-        }
-        .project-card:hover .project-image {
-            transform: scale(1.05);
-        }
-        nav a {
-            color: #c0b0d0; /* Light pastel lavender for nav links */
-        }
-        nav a:hover {
-            color: #f0c3f0; /* Soft pink accent for hover */
-        }
-        .skill-tag {
-            transition: all 0.3s ease;
-            color: #d8c4e8; /* Soft lavender text for tags */
-            font-weight: 500;
-        }
-        .skill-tag:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 2px 8px rgba(240, 195, 240, 0.2); /* Softer pink shadow */
-        }
-        /* Custom scrollbar for dark theme */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #1a1a2e; /* Dark background for track */
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #b0e0e6; /* Soft cyan for thumb */
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #f0c3f0; /* Soft pink for thumb hover */
-        }
-        .button-pastel-gradient {
-             background: linear-gradient(to right, #ee9ca7, #ffdde1); /* Pastel pink gradient */
-        }
-        .button-pastel-gradient:hover {
-             background: linear-gradient(to right, #f0a0aa, #ffe1e5); /* Slightly darker pastel pink */
+        .footer-bg {
+            background-color: #262626; /* neutral-800 (Dark Gray/Off-black) */
         }
     </style>
 </head>
-<body class="antialiased leading-relaxed">
+<body>
 
-    <nav class="fixed top-0 left-0 right-0 z-50 py-4 glassmorphism shadow-lg">
-        <div class="container mx-auto px-6 flex justify-between items-center">
-            <a href="#home" class="text-2xl font-bold lush-gradient-text">tolivesober</a>
-            <div class="space-x-6 text-lg">
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#contact">Contact</a>
+<header class="bg-white shadow-md sticky top-0 z-50">
+    <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <div class="flex items-center">
+                <a href="#" class="text-2xl font-bold text-neutral-700">ToLiveSober</a>
+            </div>
+            <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-4">
+                    <a href="#home" class="nav-link nav-link-active">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#blog" class="nav-link">Blog</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-neutral-600 hover:text-neutral-700 hover:bg-stone-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-neutral-500">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                    <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
             </div>
         </div>
     </nav>
-
-    <header id="home" class="min-h-screen flex items-center justify-center lush-gradient-bg pt-20 md:pt-16">
-        <div class="text-center p-6 md:p-12">
-            <h1 class="text-6xl md:text-8xl font-extrabold mb-2">
-                <span class="lush-gradient-text">tolivesober</span>
-            </h1>
-            <p class="text-2xl md:text-3xl font-light mb-6 text-gray-400">by dancreativeco</p>
-            <p class="text-xl md:text-2xl font-normal mb-8 text-gray-300">Crafting Digital Experiences with Purpose & Precision.</p>
-            <a href="#projects" class="button-pastel-gradient text-gray-800 font-semibold py-3 px-8 rounded-lg text-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105">
-                Explore My Work
-            </a>
+    <div class="md:hidden hidden" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="#home" class="block nav-link nav-link-active text-base">Home</a>
+            <a href="#about" class="block nav-link text-base">About</a>
+            <a href="#blog" class="block nav-link text-base">Blog</a>
+            <a href="#contact" class="block nav-link text-base">Contact</a>
         </div>
-    </header>
+    </div>
+</header>
 
-    <section id="about" class="py-20 md:py-32 section-alt-bg">
-        <div class="container mx-auto px-6">
-            <h2 class="section-title"><span class="lush-gradient-text">About</span> <span class="text-white">Me</span></h2>
-            <div class="max-w-3xl mx-auto text-center text-lg md:text-xl text-gray-300 space-y-6">
-                <p>
-                    "tolivesober" is more than just a name; it's the philosophy guiding my development process at <span class="font-semibold text-pink-300">dancreativeco</span>.
-                    It represents a commitment to clarity, intentionality, and creating digital solutions that are not only functional but also meaningful and beautifully executed.
-                </p>
-                <p>
-                    I believe in a focused approach, stripping away the unnecessary to deliver clean, robust, and user-centric applications.
-                    This portfolio showcases projects built with this ethos – a blend of creative problem-solving and meticulous craftsmanship.
-                </p>
-                <p>
-                    As Dan, the developer behind dancreativeco, I pour passion into every line of code, aiming for elegance in structure and a seamless user experience.
-                </p>
-            </div>
-        </div>
-    </section>
+<section id="home" class="hero-bg text-stone-100 py-20 md:py-32"> <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+        Finding Strength in Sobriety
+    </h1>
+    <p class="text-lg sm:text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-stone-200"> Join me on a journey of recovery, resilience, and rediscovering life.
+    </p>
+    <a href="#blog" class="bg-neutral-700 text-white font-semibold py-3 px-8 rounded-lg text-lg hover:bg-neutral-600 transition-colors shadow-md">
+        Read My Story
+    </a>
+</div>
+</section>
 
-    <section id="projects" class="py-20 md:py-32 lush-gradient-bg">
-        <div class="container mx-auto px-6">
-            <h2 class="section-title"><span class="text-white">Featured</span> <span class="lush-gradient-text">Projects</span></h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <div class="project-card glassmorphism overflow-hidden shadow-2xl transform transition duration-500 hover:scale-105 group">
-                    <div class="overflow-hidden h-64">
-                        <img src="https://placehold.co/600x400/2a2a4e/e0e0e0?text=Project+Alpha" alt="Project Alpha" class="project-image w-full h-full object-cover transition-transform duration-500 ease-in-out">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2 text-pink-300">Project Alpha</h3>
-                        <p class="text-gray-400 mb-4 text-sm">A cutting-edge web application designed to streamline user workflows and boost productivity through an intuitive interface.</p>
-                        <div class="mb-4">
-                            <span class="inline-block bg-pink-800 bg-opacity-50 text-pink-200 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">React</span>
-                            <span class="inline-block bg-cyan-800 bg-opacity-50 text-cyan-200 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Node.js</span>
-                            <span class="inline-block bg-teal-800 bg-opacity-50 text-teal-200 text-xs font-semibold px-2.5 py-0.5 rounded-full">MongoDB</span>
-                        </div>
-                        <div class="flex space-x-4">
-                            <a href="#" class="text-pink-300 hover:text-pink-200 font-semibold transition duration-300">Live Demo</a>
-                            <a href="#" class="text-cyan-300 hover:text-cyan-200 font-semibold transition duration-300">View Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card glassmorphism overflow-hidden shadow-2xl transform transition duration-500 hover:scale-105 group">
-                     <div class="overflow-hidden h-64">
-                        <img src="https://placehold.co/600x400/1a1a2e/e0e0e0?text=Project+Beta" alt="Project Beta" class="project-image w-full h-full object-cover transition-transform duration-500 ease-in-out">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2 text-pink-300">Project Beta</h3>
-                        <p class="text-gray-400 mb-4 text-sm">An e-commerce platform with a focus on user experience and seamless integration of payment gateways.</p>
-                         <div class="mb-4">
-                            <span class="inline-block bg-pink-800 bg-opacity-50 text-pink-200 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Vue.js</span>
-                            <span class="inline-block bg-teal-800 bg-opacity-50 text-teal-200 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Firebase</span>
-                            <span class="inline-block bg-cyan-800 bg-opacity-50 text-cyan-200 text-xs font-semibold px-2.5 py-0.5 rounded-full">Stripe</span>
-                        </div>
-                        <div class="flex space-x-4">
-                            <a href="#" class="text-pink-300 hover:text-pink-200 font-semibold transition duration-300">Live Demo</a>
-                            <a href="#" class="text-cyan-300 hover:text-cyan-200 font-semibold transition duration-300">View Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card glassmorphism overflow-hidden shadow-2xl transform transition duration-500 hover:scale-105 group">
-                    <div class="overflow-hidden h-64">
-                        <img src="https://placehold.co/600x400/2a2a4e/e0e0e0?text=Project+Gamma" alt="Project Gamma" class="project-image w-full h-full object-cover transition-transform duration-500 ease-in-out">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2 text-pink-300">Project Gamma</h3>
-                        <p class="text-gray-400 mb-4 text-sm">A data visualization dashboard helping businesses make informed decisions with interactive charts and real-time data.</p>
-                        <div class="mb-4">
-                            <span class="inline-block bg-cyan-800 bg-opacity-50 text-cyan-200 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">D3.js</span>
-                            <span class="inline-block bg-teal-800 bg-opacity-50 text-teal-200 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Python (Flask)</span>
-                            <span class="inline-block bg-purple-800 bg-opacity-50 text-purple-200 text-xs font-semibold px-2.5 py-0.5 rounded-full">PostgreSQL</span>
-                        </div>
-                        <div class="flex space-x-4">
-                            <a href="#" class="text-pink-300 hover:text-pink-200 font-semibold transition duration-300">Live Demo</a>
-                            <a href="#" class="text-cyan-300 hover:text-cyan-200 font-semibold transition duration-300">View Code</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="py-20 md:py-32 section-alt-bg">
-        <div class="container mx-auto px-6">
-            <h2 class="section-title"><span class="lush-gradient-text">My</span> <span class="text-white">Skillset</span></h2>
-            <div class="max-w-4xl mx-auto">
-                <div class="mb-12">
-                    <h3 class="text-2xl font-semibold text-pink-300 mb-6 text-center">Frontend Development</h3>
-                    <div class="flex flex-wrap justify-center gap-4">
-                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">HTML5</span>
-                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">CSS3 & Tailwind</span>
-                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">JavaScript (ES6+)</span>
-                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">React</span>
-                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">Vue.js</span>
-                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">Next.js</span>
-                    </div>
-                </div>
-                <div class="mb-12">
-                    <h3 class="text-2xl font-semibold text-pink-300 mb-6 text-center">Backend Development</h3>
-                    <div class="flex flex-wrap justify-center gap-4">
-                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">Node.js & Express</span>
-                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">Python (Flask/Django)</span>
-                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">REST APIs & GraphQL</span>
-                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">MongoDB</span>
-                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">PostgreSQL</span>
-                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">Firebase</span>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-semibold text-pink-300 mb-6 text-center">Tools & Other</h3>
-                    <div class="flex flex-wrap justify-center gap-4">
-                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">Git & GitHub</span>
-                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">Docker</span>
-                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">Webpack</span>
-                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">Figma</span>
-                        <span class="skill-tag glassmorphism text-lg px-6 py-3 shadow-md">Agile Methodologies</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-20 md:py-32 lush-gradient-bg">
-        <div class="container mx-auto px-6">
-            <h2 class="section-title"><span class="text-white">Get In</span> <span class="lush-gradient-text">Touch</span></h2>
-            <div class="max-w-xl mx-auto text-center">
-                <p class="text-lg text-gray-300 mb-8">
-                    Interested in collaborating or have a project in mind? I'd love to hear from you.
-                    Let's create something exceptional together.
-                </p>
-                <a href="mailto:hello@tolivesober.com" class="button-pastel-gradient text-gray-800 font-semibold py-4 px-10 rounded-lg text-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 inline-block">
-                    hello@dancreativeco.com
-                </a>
-                <div class="mt-12 flex justify-center space-x-6">
-                    <a href="https://github.com/dancreativeco" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-pink-300 transition duration-300">
-                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
-                    </a>
-                    <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-pink-300 transition duration-300">
-                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-8 text-center bg-[#111827]"> <p class="text-gray-500">
-            &copy; <span id="currentYear"></span> dancreativeco. All rights reserved.
+<section id="about" class="py-16 md:py-24 bg-white"> <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-neutral-700 mb-4">About ToLiveSober</h2>
+        <p class="text-lg text-neutral-600 max-w-xl mx-auto">
+            ToLiveSober is a personal blog dedicated to sharing experiences, insights, and hope on the path to a sober and fulfilling life. It's a space for connection, understanding, and mutual support.
         </p>
-        <p class="text-gray-600 text-sm">Portfolio concept: <span class="font-semibold lush-gradient-text">tolivesober</span></p>
-    </footer>
+    </div>
+    <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
+        <div class="md:w-1/2">
+            <img src="https://placehold.co/600x400/D1D5DB/374151?text=Path+to+Healing" alt="Path to Healing" class="rounded-lg shadow-xl w-full h-auto">
+            <script>
+                const imgAbout = document.querySelector('img[alt="Path to Healing"]');
+                imgAbout.onerror = () => {
+                    imgAbout.src = 'https://placehold.co/600x400/B0B0B0/505050?text=Image+Not+Available'; // Darker fallback
+                    imgAbout.alt = 'Image Not Available';
+                };
+            </script>
+        </div>
+        <div class="md:w-1/2">
+            <h3 class="text-2xl font-semibold text-neutral-700 mb-3">My Mission</h3>
+            <p class="text-neutral-600 mb-4">
+                To break the stigma surrounding addiction and recovery, offering a beacon of light for those who feel lost in the dark. I believe in the power of shared stories to heal and inspire.
+            </p>
+            <h3 class="text-2xl font-semibold text-neutral-700 mb-3">What You'll Find Here</h3>
+            <ul class="list-disc list-inside text-neutral-600 space-y-2">
+                <li>Personal reflections and milestones in recovery.</li>
+                <li>Tips and strategies for maintaining sobriety.</li>
+                <li>Resources for help and support.</li>
+                <li>A community of understanding individuals.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</section>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                // Adjust for fixed nav height (approx 60px, check your nav's actual height)
-                const navHeight = document.querySelector('nav')?.offsetHeight || 60; // Nav height is dynamic
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                    const offsetPosition = elementPosition - navHeight;
-    
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
+<section id="blog" class="py-16 md:py-24"> <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-neutral-700 mb-4">Latest Reflections</h2>
+        <p class="text-lg text-neutral-600 max-w-xl mx-auto">
+            Dive into recent posts sharing insights, struggles, and triumphs on the journey.
+        </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover transition-all duration-300">
+            <img src="https://placehold.co/600x400/E5E7EB/374151?text=One+Day+at+a+Time" alt="Blog Post Image 1" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <span class="text-xs font-semibold text-neutral-500 uppercase">Mindfulness</span>
+                <h3 class="text-xl font-semibold text-neutral-800 mt-2 mb-3">The Power of One Day at a Time</h3>
+                <p class="text-neutral-600 text-sm mb-4">
+                    Discovering how focusing on the present moment can be the most powerful tool in early recovery and beyond...
+                </p>
+                <a href="#" class="text-neutral-600 font-semibold hover:text-neutral-800 transition-colors">Read More &rarr;</a>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover transition-all duration-300">
+            <img src="https://placehold.co/600x400/D1D5DB/4B5563?text=Building+Support" alt="Blog Post Image 2" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <span class="text-xs font-semibold text-neutral-500 uppercase">Community</span>
+                <h3 class="text-xl font-semibold text-neutral-800 mt-2 mb-3">Building Your Sober Support System</h3>
+                <p class="text-neutral-600 text-sm mb-4">
+                    No one has to go through recovery alone. Tips on finding and nurturing connections that support your journey...
+                </p>
+                <a href="#" class="text-neutral-600 font-semibold hover:text-neutral-800 transition-colors">Read More &rarr;</a>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover transition-all duration-300">
+            <img src="https://placehold.co/600x400/9CA3AF/1F2937?text=New+Hobbies" alt="Blog Post Image 3" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <span class="text-xs font-semibold text-neutral-500 uppercase">Self-Discovery</span>
+                <h3 class="text-xl font-semibold text-neutral-800 mt-2 mb-3">Rediscovering Joy: New Hobbies in Sobriety</h3>
+                <p class="text-neutral-600 text-sm mb-4">
+                    Sobriety opens up space for new passions. Exploring activities that bring joy and fulfillment without alcohol...
+                </p>
+                <a href="#" class="text-neutral-600 font-semibold hover:text-neutral-800 transition-colors">Read More &rarr;</a>
+            </div>
+        </div>
+        <script>
+            document.querySelectorAll('#blog img').forEach(img => {
+                img.onerror = function() {
+                    this.src = 'https://placehold.co/600x400/B0B0B0/505050?text=Image+Not+Available'; // Darker fallback
+                    this.alt = 'Image Not Available';
+                };
             });
-        });
+        </script>
+    </div>
+    <div class="text-center mt-12">
+        <a href="#" class="bg-neutral-700 text-white font-semibold py-3 px-8 rounded-lg text-lg hover:bg-neutral-600 transition-colors shadow-md">
+            View All Posts
+        </a>
+    </div>
+</div>
+</section>
 
-        // Set current year in footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+<section id="contact" class="py-16 md:py-24 bg-white"> <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-neutral-700 mb-4">Get In Touch</h2>
+        <p class="text-lg text-neutral-600 max-w-xl mx-auto">
+            Have questions, want to share your story, or just need to connect? I'm here to listen.
+        </p>
+    </div>
+    <div class="max-w-lg mx-auto bg-stone-50 p-8 rounded-xl shadow-lg"> <form action="#" method="POST">
+        <div class="mb-4">
+            <label for="name" class="block text-sm font-medium text-neutral-700 mb-1">Full Name</label>
+            <input type="text" name="name" id="name" class="w-full px-3 py-2 border border-stone-300 rounded-md shadow-sm focus:outline-none focus:ring-neutral-500 focus:border-neutral-500" placeholder="Your Name">
+        </div>
+        <div class="mb-4">
+            <label for="email" class="block text-sm font-medium text-neutral-700 mb-1">Email Address</label>
+            <input type="email" name="email" id="email" class="w-full px-3 py-2 border border-stone-300 rounded-md shadow-sm focus:outline-none focus:ring-neutral-500 focus:border-neutral-500" placeholder="you@example.com">
+        </div>
+        <div class="mb-6">
+            <label for="message" class="block text-sm font-medium text-neutral-700 mb-1">Message</label>
+            <textarea name="message" id="message" rows="4" class="w-full px-3 py-2 border border-stone-300 rounded-md shadow-sm focus:outline-none focus:ring-neutral-500 focus:border-neutral-500" placeholder="Your message..."></textarea>
+        </div>
+        <div>
+            <button type="submit" class="w-full bg-neutral-700 text-white py-3 px-6 rounded-md font-semibold hover:bg-neutral-600 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neutral-500">
+                Send Message
+            </button>
+        </div>
+    </form>
+    </div>
+</div>
+</section>
 
-        // Optional: Simple scroll animations for sections 
-        // (You'd need to define the 'fade-in-up' CSS class as previously discussed if you enable this)
-        /*
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
-            opacity: 0; 
-        }
-        const sections = document.querySelectorAll('section'); // Ensure this is not inside another script tag
-        const options = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
-        };
+<footer class="footer-bg text-stone-300 py-12"> <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-lg font-semibold mb-2 text-stone-100">ToLiveSober</p>
+    <p class="mb-4 text-stone-200">Spreading hope, one day at a time.</p>
+    <div class="flex justify-center space-x-6 mb-4">
+        <a href="#" class="hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+        </a>
+        <a href="#" class="hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>
+        </a>
+        <a href="#" class="hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm3.153 8.865c.28.41.447.89.447 1.405 0 .486-.143.94-.427 1.346-.036.05-.076.095-.12.136a5.106 5.106 0 01-1.01 1.01c-.04.045-.086.085-.136.12a3.095 3.095 0 01-1.346.427c-.515 0-.995-.167-1.405-.447l-4.929-3.286c-.39-.26-.625-.705-.625-1.177s.235-.917.625-1.177l4.929-3.286c.41-.28.89-.447 1.405-.447.486 0 .94.143 1.346.427.05.036.095.076.136.12a5.106 5.106 0 011.01 1.01c.045.04.085.086.12.136.284.406.427.86.427 1.346s-.167.995-.447 1.405l-1.75 1.167 1.75 1.167z" clip-rule="evenodd" /></svg>
+        </a>
+    </div>
+    <p class="text-sm">&copy; <span id="currentYear"></span> ToLiveSober. All Rights Reserved. Created with Hope.</p>
+</div>
+</footer>
 
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in-up');
-                    // observer.unobserve(entry.target); 
+<script>
+    // Mobile menu toggle
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = menuButton.querySelector('svg:first-child');
+    const closeIcon = menuButton.querySelector('svg:last-child');
+
+    menuButton.addEventListener('click', () => {
+        const expanded = menuButton.getAttribute('aria-expanded') === 'true' || false;
+        menuButton.setAttribute('aria-expanded', !expanded);
+        mobileMenu.classList.toggle('hidden');
+        hamburgerIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+    });
+
+    // Smooth scrolling for navigation links & active state update
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                // Close mobile menu if open and a link is clicked
+                if (!mobileMenu.classList.contains('hidden')) {
+                    menuButton.click(); // Simulate click to toggle menu and icons
                 }
-            });
-        }, options);
 
-        sections.forEach(section => {
-            observer.observe(section);
+                // Update active nav link styling
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('nav-link-active');
+                });
+                this.classList.add('nav-link-active');
+            }
         });
-        */
-    </script>
+    });
+
+    // Set current year in footer
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Image error handlers (already included inline for 'About' and looped for 'Blog')
+</script>
 
 </body>
 </html>
